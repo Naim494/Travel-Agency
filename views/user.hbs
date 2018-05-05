@@ -9,15 +9,16 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="/javascripts/global.js"></script>
+  <script src="/javascripts/userJS.js"></script>
 
 
 </head>
-
+{{!-- class="navbar-brand" href="#" --}}
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a id="welcomeHeader" class="navbar-brand" href="#">Welcome </a>
   </nav>
+  {{!-- <h1>Welcome </h1> --}}
 </div>
 
 <div class="leftDiv">
@@ -27,13 +28,13 @@
 
       <div class="source">
         <div class="input-group">
-          <input type="text" class="form-control mb-2" id="country" placeholder="Country" name="country">
-          <input type="text" class="form-control mb-2" id="state" placeholder="State" name="state">
-          <input type="text" class="form-control mb-2" id="city" placeholder="City" name="city">
+          <input type="text"  class="form-control mb-2" id="srcCntry" placeholder="Country" name="country">
+          <input type="text" class="form-control mb-2" id="srcSt" placeholder="State" name="state">
+          <input type="text" class="form-control mb-2" id="srcCty" placeholder="City" name="city">
         </div>
         <div class="col-sm-3">
-          <input type="text" class="form-control mb-2" id="departTime" placeholder="Depart Time" name="departTime">
-          <input type="text" class="form-control mb-2" id="departDate" placeholder="Depart Date" name="departDate">
+          <input type="text" class="form-control mb-2" id="srcTime" placeholder="Depart Time" name="departTime">
+          <input type="text" class="form-control mb-2" id="srcDate" placeholder="Depart Date" name="departDate">
         </div>
       </div>
 
@@ -42,13 +43,13 @@
       <h4 class="destinationHeader"> Destination: </h4>
       <div class="destination">
         <div class="input-group">
-          <input type="text" class="form-control mb-2" id="country" placeholder="Country" name="country">
-          <input type="text" class="form-control mb-2" id="state" placeholder="State" name="state">
-          <input type="text" class="form-control mb-2" id="city" placeholder="City" name="city">
+          <input type="text" class="form-control mb-2" id="destCntry" placeholder="Country" name="country">
+          <input type="text" class="form-control mb-2" id="destSt" placeholder="State" name="state">
+          <input type="text" class="form-control mb-2" id="destCty" placeholder="City" name="city">
         </div>
         <div class="col-sm-3">
-          <input type="text" class="form-control mb-2" id="departTime" placeholder="Depart Time" name="departTime">
-          <input type="text" class="form-control mb-2" id="departDate" placeholder="Depart Date" name="departDate">
+          <input type="text" class="form-control mb-2" id="destTime" placeholder="Depart Time" name="departTime">
+          <input type="text" class="form-control mb-2" id="destDate" placeholder="Depart Date" name="departDate">
         </div>
       </div>
 
@@ -57,15 +58,15 @@
       <h4 class="groupHeader"> Group: </h4>
       <div class="transport">
         <div class="col-sm-10">
-          <input type="text" class="form-control mb-2" id="purpose" placeholder="Purpose" name="purpose">
+          <input type="text" class="form-control mb-2" id="grpPurpose" placeholder="Purpose" name="purpose">
         </div>
 
         <div class="col-sm-2">
-          <input type="text" class="form-control mb-2" id="size" placeholder="Size" name="size">
+          <input type="text" class="form-control mb-2" id="grpSize" placeholder="Size" name="size">
         </div>
 
         <div class="col-sm-10">
-          <input type="text" class="form-control mb-2" id="activity" placeholder="Activity" name="activity">
+          <input type="text" class="form-control mb-2" id="grpAct" placeholder="Activity" name="activity">
         </div>
       </div>
 
@@ -74,7 +75,7 @@
       <h4 class="busHeader"> Bus: </h4>
       <div class="transport">
         <div class="col-sm-6">
-          <input type="text" class="form-control mb-2" id="busTicketNumber" placeholder="Bus Ticket #" name="busTicketNumber">
+          <input type="text" class="form-control mb-2" id="busTKT" placeholder="Bus Ticket #" name="busTicketNumber">
         </div>
 
         <div class="col-sm-4">
@@ -87,7 +88,7 @@
       <h4 class="cruiseHeader"> Cruise: </h4>
       <div class="transport">
         <div class="col-sm-6">
-          <input type="text" class="form-control mb-2" id="cruiseTicketNumber" placeholder="Cruise Ticket #" name="cruiseTicketNumber">
+          <input type="text" class="form-control mb-2" id="cruiseTKT" placeholder="Cruise Ticket #" name="cruiseTicketNumber">
         </div>
 
         <div class="col-sm-4">
@@ -100,7 +101,7 @@
       <h4 class="flightHeader"> Flight: </h4>
       <div class="transport">
         <div class="col-sm-6">
-          <input type="text" class="form-control mb-2" id="flightTicketNumber" placeholder="Flight Ticket #" name="flightTicketNumber">
+          <input type="text" class="form-control mb-2" id="flightTKT" placeholder="Flight Ticket #" name="flightTicketNumber">
         </div>
 
         <div class="col-sm-4">
@@ -113,11 +114,32 @@
       <h4 class="carHeader"> Car: </h4>
       <div class="transport">
         <div class="col-sm-6">
-          <input type="text" class="form-control mb-2" id="carVin" placeholder="Car VIN #" name="carVin">
+          <input type="text" class="form-control mb-2" id="carVIN" placeholder="Car VIN #" name="carVin">
         </div>
 
         <div class="col-sm-4">
           <input type="text" class="form-control mb-2" id="carPrice" placeholder="Car Price" name="carPrice">
+        </div>
+      </div>
+
+      <br><br>
+
+      <h4 class="accommodation"> Accommodation: </h4>
+      <div class="transport">
+        <div class="col-sm-6">
+          <input type="text" class="form-control mb-2" id="placeName" placeholder="Place Name" name="placeName">
+        </div>
+
+        <div class="col-sm-4">
+          <input type="text" class="form-control mb-2" id="disc" placeholder="Discount" name="disc">
+        </div>
+
+        <div class="col-sm-4">
+          <input type="text" class="form-control mb-2" id="rate" placeholder="Rate" name="rate">
+        </div>
+
+        <div class="col-sm-4">
+          <input type="text" class="form-control mb-2" id="accType" placeholder="Accommodation Type" name="accType">
         </div>
       </div>
 
