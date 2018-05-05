@@ -13,7 +13,6 @@ router.post('/', function (req, res, next) {
     var email = req.body.email;
     var password = req.body.password;
 
-
     knex('Users').insert({
         FirstName: firstname,
         LastName: lastname,
@@ -33,11 +32,6 @@ router.post('/', function (req, res, next) {
             console.log('ADDED USER!')
         }
     })
-
-
-    
-
-
 });
 
 module.exports = router;

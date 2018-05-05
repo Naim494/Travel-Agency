@@ -4,42 +4,39 @@ var knex = require('../mysql');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('accounts/login', { message: req.flash('loginMessage')});
-  });
-  
-  router.post('/', function (req, res, next) {
-    var username = req.body.username;
+    res.render('index', { title: 'Travel Agency' });
+});
+
+router.post('/', function (req, res, next) {
+    var email = req.body.email;
     var password = req.body.password;
-  
-    console.log("Finding username: " + username + " password: " + password);
-    User.findOne({ username: username }, function (err, user) {
-      //can't find a user by username
-      if (err || !user) {
-        req.flash('loginMessage', 'No user found');
-        res.status(200).json({
-          status: 'error',
-          error: 'Cannot find username'
-        });
-      } else {
-        
-        
-        if (user.password != password)
-        {
-          req.flash('loginMessage', 'Oops! wrong Password');
-          res.status(200).json({
-            status: 'error',
-            error: 'wrong password'
-          });
+    var name;
+
+    console.log("Finding email: " + email + " password: " + password);
+
+    knex('Users').where({
+        email: email,
+        password: password
+        //password: password
+    }).asCallback(function (err, users) {
+        if (!err) {
+            console.log('FOUND USER');
+            res.cookie('email', email);
+
+            var userData = JSON.stringify(users[0]);
+            userData = JSON.parse(userData);
+           
+            name = userData['FirstName'];
+            res.cookie('name', name);
+
+            res.status(200).send({ status: 'ok' });
+
         }
-        else if (user.password == password && user.verified) {
-          res.cookie('username', username);
-          res.status(200).json({
-            status: 'OK'
-          });
+        else {
+            console.log("USER DOES NOT EXIST");
+        
         }
-  
-      }
-    });
-  });
-  
+    })
+});
+
 module.exports = router;

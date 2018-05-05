@@ -4,6 +4,8 @@ $(document).ready(function () {
 
     $('#logInBtn').on('click', logInUser);
 
+
+
 });
 
 function addUser(event) {
@@ -42,4 +44,28 @@ function addUser(event) {
 
 function logInUser(event) {
 
+    var email = $("#logInUsername").val();
+    var password = $("#logInPswd").val();
+
+    var newLogin = {
+        'email': email,
+        'password': password
+    }
+    
+    $.ajax({
+        type: 'POST',
+        data: newLogin,
+        url: '/login',
+        dataType: 'JSON'
+    }).done(function (response) {
+        if(response.status === 'ok'){
+             $(location).attr('href', 'user');
+        }
+        else {
+
+        }
+    });
+        
+
 }
+
