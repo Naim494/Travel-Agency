@@ -8,7 +8,7 @@ $(document).ready(function () {
 
         username = data.name;
 
-        var heading = document.getElementById("welcomeHeader");
+        var heading = document.getElementById('welcomeHeader');
 
         heading.innerHTML = heading.textContent + " " + username;
 
