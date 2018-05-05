@@ -3,7 +3,7 @@ var knex = require('knex')({
     connection: {
         host: 'localhost',
         user: 'root',
-        password: '1400005',
+        password: 'password',
         database: 'travel_agency'
     },
     debug: true
