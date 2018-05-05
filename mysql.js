@@ -21,8 +21,8 @@ knex.schema.hasTable('Users').then(function (exists) {
 
 function createAllTables() {
     knex.schema.createTable('Users', function (table) {
-        table.string('userID').notNullable();
-        table.integer('SSN').primary().unique();
+        table.integer('userID').primary().unique().notNullable();
+        table.integer('SSN').unique().notNullable();
         table.date('dob').notNullable();
         table.string('FirstName').notNullable();
         table.string('LastName').notNullable();
@@ -34,12 +34,12 @@ function createAllTables() {
 
         .createTable('Passengers', function (table) {
             table.integer('PassengerID').primary().unique().notNullable();
-            table.integer('SSN').references('Users.SSN');
+            table.integer('userID').references('Users.userID');
         })
 
         .createTable('Employees', function (table) {
             table.integer('employeeID').primary().unique().notNullable();
-            table.integer('SSN').references('Users.SSN').notNullable();
+            table.integer('userID').references('Users.userID').notNullable();
             table.date('dateHired').notNullable();
             table.integer('salary').notNullable();
             table.string('role');
@@ -126,13 +126,13 @@ function createAllTables() {
         })
 
         .createTable('Trips', function (table) {
-            table.string('userID').references('Users.userID').notNullable();
-            table.string('tripID').primary().unique().notNullable();
-            table.string('sourceID').references('Sources.sourceID').notNullable();
-            table.string('destinationID').references('Destinations.destinationID').notNullable();
+            table.integer('userID').references('Users.userID').notNullable();
+            table.integer('tripID').primary().unique().notNullable();
+            table.integer('sourceID').references('Sources.sourceID').notNullable();
+            table.integer('destinationID').references('Destinations.destinationID').notNullable();
             table.date('date').notNullable();
             table.time('time').notNullable();
-            table.string('groupID').references('Groups.groupID').notNullable();
+            table.integer('groupID').references('Groups.groupID').notNullable();
         })
 
         .catch(function (e) {
