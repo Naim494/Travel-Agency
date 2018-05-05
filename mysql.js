@@ -22,11 +22,7 @@ knex.schema.hasTable('Users').then(function (exists) {
 function createAllTables() {
     knex.schema.createTable('Users', function (table) {
         table.integer('userID').primary().unique().notNullable();
-<<<<<<< HEAD
-        table.integer('SSN').notNullable();
-=======
         table.integer('SSN').unique().notNullable();
->>>>>>> c4860cfbcfdc0496c3ae55136989913425910c5d
         table.date('dob').notNullable();
         table.string('FirstName').notNullable();
         table.string('LastName').notNullable();
@@ -130,15 +126,6 @@ function createAllTables() {
         })
 
         .createTable('Trips', function (table) {
-<<<<<<< HEAD
-            table.string('tripID').primary().unique().notNullable();
-            table.date('date').notNullable();
-            table.time('time').notNullable();
-            table.integer('userID').references('Users.userID');
-            table.integer('sourceID').references('Sources.sourceID');
-            table.integer('destinationID').references('Destinations.destinationID');
-            table.integer('groupID').references('Groups.groupID');
-=======
             table.integer('userID').references('Users.userID').notNullable();
             table.integer('tripID').primary().unique().notNullable();
             table.integer('sourceID').references('Sources.sourceID').notNullable();
@@ -146,7 +133,6 @@ function createAllTables() {
             table.date('date').notNullable();
             table.time('time').notNullable();
             table.integer('groupID').references('Groups.groupID').notNullable();
->>>>>>> c4860cfbcfdc0496c3ae55136989913425910c5d
         })
 
         .catch(function (e) {
