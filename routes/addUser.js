@@ -10,10 +10,11 @@ router.post('/', function (req, res, next) {
     var dob = req.body.dob;
     var gender = req.body.gender;
     var ssn = req.body.ssn;
-    var email = req.body.email;
+    var email = req.body.email.toLowerCase();
     var password = req.body.password;
 
     knex('Users').insert({
+        UserID: Math.floor(Math.random() * 99999),
         FirstName: firstname,
         LastName: lastname,
         age: age,
@@ -33,5 +34,7 @@ router.post('/', function (req, res, next) {
         }
     })
 });
+
+
 
 module.exports = router;
