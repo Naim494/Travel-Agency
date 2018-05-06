@@ -10,8 +10,33 @@ body {
  }
 
 
- input[type='checkbox'] {
-  display: none;
+ .TripInfoForm
+ {
+   top: 40%;
+   left: 25%;
+   width: 45%;
+ }
+
+.PaymentInfoForm
+{
+  padding-top: 5%;
+  left: 25%;
+  width: 45%;
 }
 
-
+.class input[type="submit"]
+ {
+   border: none;
+   outline: none;
+   height: 40px;
+   color: #fff;
+   font-size: 16px;
+   background: #ff267e;
+   cursor: pointer;
+   border-radius: 20px;
+ }
+ .loginBox input[type="submit"]:hover
+ {
+   background: #efed40;
+   color: #262626;
+ }
