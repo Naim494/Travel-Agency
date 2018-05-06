@@ -1,42 +1,101 @@
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* body {
   background-image: url("../images/plane.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center; 
   background-color: #00566c;
- }
+ } */
 
+
+
+/* .jumbotron jumbotron-fluid
+{
+  width: 45%;
+} */
 
  .TripInfoForm
  {
-   top: 40%;
-   left: 25%;
-   width: 45%;
+  padding-top: 12%;
+   /* top: 40%; */
  }
 
 .PaymentInfoForm
 {
   padding-top: 5%;
-  left: 25%;
-  width: 45%;
 }
 
-.class input[type="submit"]
- {
-   border: none;
-   outline: none;
-   height: 40px;
-   color: #fff;
-   font-size: 16px;
-   background: #ff267e;
-   cursor: pointer;
-   border-radius: 20px;
- }
- .loginBox input[type="submit"]:hover
- {
-   background: #efed40;
-   color: #262626;
- }
+
+
+
+
+ body
+{
+background:#f9f9f9;
+}
+#wrapper
+{
+padding:90px 15px;
+}
+
+.navbar-expand-lg .navbar-nav.side-nav
+{
+flex-direction: column;
+}
+.card
+{
+margin-bottom: 15px;
+border-radius:0; 
+box-shadow: 0 3px 5px rgba(0,0,0,.1); 
+}
+
+.header-top
+{
+box-shadow: 0 3px 5px rgba(0,0,0,.1)
+}
+.leftmenutrigger
+{
+display: none
+}
+
+@media(min-width:992px) {
+  .leftmenutrigger
+  {
+  display: block;
+  display: block;
+  margin: 7px 20px 4px 0;
+  cursor: pointer;
+  }
+
+  #wrapper
+  {
+  padding: 90px 15px 15px 15px;
+  }
+
+  .navbar-nav.side-nav.open 
+  {
+  left:0;
+  }
+  .navbar-nav.side-nav
+  {background: #585f66;
+    box-shadow: 2px 1px 2px rgba(0,0,0,.1);
+    position:fixed;
+    top:56px;
+    flex-direction: column!important;
+    left:-220px;
+    width:200px;
+    overflow-y:auto;
+    bottom:0;
+    overflow-x:hidden;
+    padding-bottom:40px
+  }
+}
+
+.animate
+{
+-webkit-transition:all .3s ease-in-out;
+-moz-transition:all .3s ease-in-out;
+-o-transition:all .3s ease-in-out;
+-ms-transition:all .3s ease-in-out;
+transition:all .3s ease-in-out
+}

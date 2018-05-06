@@ -7,189 +7,317 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    <link rel = "stylesheet"
-    type = "text/css"
-    href = "stylesheets/user.css" /> 
+  <link rel="stylesheet" type="text/css" href="stylesheets/user.css" />
 
-    <script src="/javascripts/userJS.js"></script>
+  <script src="/javascripts/userJS.js"></script>
 
-  
+
 </head>
+
 <body>
 
+  <div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+      <span class="navbar-toggler-icon leftmenutrigger"></span>
+      <a class="navbar-brand" href="#">Trippr</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav animate side-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Side Menu Items</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-md-auto d-md-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top Menu Items</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-{{!--      Trip Info Form      --}}
+
+    {{!-- Contain Div that holds All things --}}
+
+    <div class="container">
+      <div class="row">
+        {{!-- LEFT COLUMN --}}
+        <div class="col-md-6">
+
+          {{!-- ADD TRIP JUMBOTRON --}}
+          <div class="jumbotron jumbotron-fluid" style="background-color:#E8E56E" style="width:45%;">
+            <div class="container">
+              <h1 class="display-4">Add Trip</h1>
+              <p class="lead">Use the form below to add information to your trip.</p>
+
+              {{!-- Trip Info Form --}}
+              <div class="TripInfoForm">
+
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseOne">
+                      Source
+                    </a>
+                  </div>
+                  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="input-group">
+                        <input type="text" class="form-control mb-2" id="srcCntry" placeholder="Country" name="country">
+                        <input type="text" class="form-control mb-2" id="srcSt" placeholder="State" name="state">
+                        <input type="text" class="form-control mb-2" id="srcCty" placeholder="City" name="city">
+                        <input type="text" class="form-control mb-2" id="srcTime" placeholder="Depart Time" name="departTime">
+                        <input type="text" class="form-control mb-2" id="srcDate" placeholder="Depart Date" name="departDate">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                      Destination
+                    </a>
+                  </div>
+                  <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="input-group">
+                        <input type="text" class="form-control mb-2" id="destCntry" placeholder="Country" name="country">
+                        <input type="text" class="form-control mb-2" id="destSt" placeholder="State" name="state">
+                        <input type="text" class="form-control mb-2" id="destCty" placeholder="City" name="city">
+                        <input type="text" class="form-control mb-2" id="destTime" placeholder="Depart Time" name="departTime">
+                        <input type="text" class="form-control mb-2" id="destDate" placeholder="Depart Date" name="departDate">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                        Group
+                      </a>
+                    </div>
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="input-group">
+                          <input type="text" class="form-control mb-2" id="grpPurpose" placeholder="Purpose" name="purpose">
+                          <input type="text" class="form-control mb-2" id="grpSize" placeholder="Size" name="size">
+                          <input type="text" class="form-control mb-2" id="grpAct" placeholder="Activity" name="activity">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                        Flight
+                      </a>
+                    </div>
+                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <input type="text" class="form-control mb-2" id="flightTKT" placeholder="Flight Ticket #" name="flightTicketNumber">
+                        <input type="text" class="form-control mb-2" id="flightPrice" placeholder="Flight Price" name="flightPrice">
+                        <input type="text" class="form-control mb-2" id="flightNumber" placeholder="Flight Number" name="flightNumber">
+                        <input type="text" class="form-control mb-2" id="flightClass" placeholder="Flight Class" name="flightClass">
+                      </div>
+                    </div>
+                  </div>
 
 
- <div class="TripInfoForm">
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+                        Bus
+                      </a>
+                    </div>
+                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <input type="text" class="form-control mb-2" id="busTKT" placeholder="Bus Ticket #" name="busTicketNumber">
+                        <input type="text" class="form-control mb-2" id="busPrice" placeholder="Bus Price" name="busPrice">
+                      </div>
+                    </div>
+                  </div>
 
-  <div class="card">
-    <div class="card-header">
-      <a class="card-link" data-toggle="collapse" href="#collapseOne">
-        Source
-      </a>
-    </div>
-    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-      <div class="card-body">
-       <div class="input-group">
-          <input type="text"  class="form-control mb-2" id="srcCntry" placeholder="Country" name="country">
-          <input type="text" class="form-control mb-2" id="srcSt" placeholder="State" name="state">
-          <input type="text" class="form-control mb-2" id="srcCty" placeholder="City" name="city">
-          <input type="text" class="form-control mb-2" id="srcTime" placeholder="Depart Time" name="departTime">
-          <input type="text" class="form-control mb-2" id="srcDate" placeholder="Depart Date" name="departDate">
+                  <div class="card">
+                    <div class="card-header">
+                      <a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">
+                        Cruise
+                      </a>
+                    </div>
+                    <div id="collapseSix" class="collapse" data-parent="#accordion">
+                      <div class="card-body">
+                        <input type="text" class="form-control mb-2" id="cruiseTKT" placeholder="Cruise Ticket #" name="cruiseTicketNumber">
+                        <input type="text" class="form-control mb-2" id="cruisePrice" placeholder="Cruise Price" name="cruisePrice">
+                        <input type="text" class="form-control mb-2" id="cruiseNumber" placeholder="Cruise Number" name="cruiseNumber">
+                        <input type="text" class="form-control mb-2" id="cruiseClass" placeholder="Cruise Class" name="cruiseTicketNumber">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeven">
+                      Car
+                    </a>
+                  </div>
+                  <div id="collapseSeven" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <input type="text" class="form-control mb-2" id="carVIN" placeholder="Car VIN #" name="carVin">
+                      <input type="text" class="form-control mb-2" id="carPrice" placeholder="Car Price" name="carPrice">
+                      <input type="text" class="form-control mb-2" id="carType" placeholder="Eg. Sedan, Van, SUV" name="carType">
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseEight">
+                      Accommodation
+                    </a>
+                  </div>
+                  <div id="collapseEight" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <input type="text" class="form-control mb-2" id="placeName" placeholder="Place Name" name="placeName">
+                      <input type="text" class="form-control mb-2" id="disc" placeholder="Discount" name="disc">
+                      <input type="text" class="form-control mb-2" id="rate" placeholder="Rate" name="rate">
+                      <input type="text" class="form-control mb-2" id="accType" placeholder="Accommodation Type" name="accType">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <button id="signUpBtn" type="Submit" class="btn btn-primary mb-2"> Add Trip</button>
+
+            </div>
+          </div>
+
+
+
+
+
+
+          {{!-- ADD REVIEW JUMBOTRON --}}
+          <div class="jumbotron jumbotron-fluid" style="background-color:#E07844" style="width:45%;">
+            <div class="container">
+              <h1 class="display-4">Add Review</h1>
+              <p class="lead">Leave a review about your trip.</p>
+
+              <div class="bottomRight">
+
+                <form class="reviewForm">
+                  <div class="form-group">
+                    <label class="label" for="exampleFormControlTextarea1">Write a review ... </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                  </div>
+
+                  <div class="col-auto">
+                    <button id="addReviewBtn" type="submit" class="btn btn-primary mb-2"> Add Review</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-        Destination
-      </a>
-    </div>
-    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-       <div class="input-group">
-          <input type="text" class="form-control mb-2" id="destCntry" placeholder="Country" name="country">
-          <input type="text" class="form-control mb-2" id="destSt" placeholder="State" name="state">
-          <input type="text" class="form-control mb-2" id="destCty" placeholder="City" name="city">
-          <input type="text" class="form-control mb-2" id="destTime" placeholder="Depart Time" name="departTime">
-          <input type="text" class="form-control mb-2" id="destDate" placeholder="Depart Date" name="departDate">
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-        Group
-      </a>
-    </div>
-    <div id="collapseThree" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-          <input type="text" class="form-control mb-2" id="grpPurpose" placeholder="Purpose" name="purpose">
-          <input type="text" class="form-control mb-2" id="grpSize" placeholder="Size" name="size">
-          <input type="text" class="form-control mb-2" id="grpAct" placeholder="Activity" name="activity">
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
-        Flight
-      </a>
-    </div>
-    <div id="collapseFour" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-        <input type="text" class="form-control mb-2" id="flightTKT" placeholder="Flight Ticket #" name="flightTicketNumber">
-        <input type="text" class="form-control mb-2" id="flightPrice" placeholder="Flight Price" name="flightPrice">
-        <input type="text" class="form-control mb-2" id="flightNumber" placeholder="Flight Number" name="flightNumber">
-        <input type="text" class="form-control mb-2" id="flightClass" placeholder="Flight Class" name="flightClass">
-      </div>
-    </div>
-  </div>
 
 
-  <div class="card">
-    <div class="card-header">
-      <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
-        Bus
-      </a>
-    </div>
-    <div id="collapseFive" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-         <input type="text" class="form-control mb-2" id="busTKT" placeholder="Bus Ticket #" name="busTicketNumber">
-         <input type="text" class="form-control mb-2" id="busPrice" placeholder="Bus Price" name="busPrice">
-      </div>
-    </div>
-  </div>
+        {{!-- RIGHT COLUMNS --}}
+        <div class="col-md-6">
 
-   <div class="card">
-    <div class="card-header">
-      <a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">
-        Cruise
-      </a>
-    </div>
-    <div id="collapseSix" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-        <input type="text" class="form-control mb-2" id="cruiseTKT" placeholder="Cruise Ticket #" name="cruiseTicketNumber">
-        <input type="text" class="form-control mb-2" id="cruisePrice" placeholder="Cruise Price" name="cruisePrice">
-        <input type="text" class="form-control mb-2" id="cruiseNumber" placeholder="Cruise Number" name="cruiseNumber">
-        <input type="text" class="form-control mb-2" id="cruiseClass" placeholder="Cruise Class" name="cruiseTicketNumber">
-        </div>
-      </div>
-    </div>
-  </div>
+          {{!-- View Past Trips JUMBOTRON --}}
+          <div class="jumbotron jumbotron-fluid" style="background-color:#89ABBF" style="width:45%;">
+            <div class="container">
+              <h1 class="display-4">View Past Trips</h1>
+              <p class="lead">Select a past trip from below.</p>
 
-  <div class="card">
-    <div class="card-header">
-      <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeven">
-        Car
-      </a>
-    </div>
-    <div id="collapseSeven" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-        <input type="text" class="form-control mb-2" id="carVIN" placeholder="Car VIN #" name="carVin">
-        <input type="text" class="form-control mb-2" id="carPrice" placeholder="Car Price" name="carPrice">
-                <input type="text" class="form-control mb-2" id="carType" placeholder="Eg. Sedan, Van, SUV" name="carType">
+              {{!-- View Past Trips TABLE --}}
+              <div class="topRight">
+                <label class="label" for="exampleFormControlTextarea1">Your recent trips ... </label>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Trip ID</th>
+                      <th scope="col">From</th>
+                      <th scope="col">To</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+          </div>
+
+
+
+          {{!-- ADD Payment JUMBOTRON --}}
+          <div class="jumbotron jumbotron-fluid" style="background-color:#b2ff59" style="width:45%;">
+            <div class="container">
+              <h1 class="display-4">Add Payment</h1>
+              <p class="lead">Use the form below to add payment information.</p>
+
+              {{!-- Payment Form --}}
+
+              <div class="PaymentInfoForm">
+
+                <div class="card">
+                  <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapsePayment">
+                      Payment Info
+                    </a>
+                  </div>
+                  <div id="collapsePayment" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="input-group">
+                        <input type="text" class="form-control mb-2" id="srcCntry" placeholder="Credit Card Number" name="Ex. 4111 1111 1111 1111 ">
+                        <input type="text" class="form-control mb-2" id="srcCntry" placeholder="Security Number" name="Ex. 436 ">
+                        <input type="text" class="form-control mb-2" id="srcCntry" placeholder="Expiration Date" name="Ex. 2020-1-25">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button id="payBtn" type="Pay" class="btn btn-primary mb-2"> Add Payment</button>
+            </div>
+          </div>
+
+
 
         </div>
+
+
+
       </div>
-    </div>
-  
 
-  <div class="card">
-    <div class="card-header">
-      <a class="collapsed card-link" data-toggle="collapse" href="#collapseEight">
-        Accommodation
-      </a>
-    </div>
-    <div id="collapseEight" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-        <input type="text" class="form-control mb-2" id="placeName" placeholder="Place Name" name="placeName">
-        <input type="text" class="form-control mb-2" id="disc" placeholder="Discount" name="disc">
-        <input type="text" class="form-control mb-2" id="rate" placeholder="Rate" name="rate">
-        <input type="text" class="form-control mb-2" id="accType" placeholder="Accommodation Type" name="accType">
-        </div>
-      </div>
     </div>
 
-  <div class="card">
-    <div class="card-header">
-    <button id="signUpBtn" type="submit" class="btn btn-primary mb-2"> Add Trip</button>  
-    </div>
-</div>
-
-
-
-{{!--      Payment Form      --}}
-
-<div class="PaymentInfoForm">
-
-  <div class="card">
-    <div class="card-header">
-      <a class="card-link" data-toggle="collapse" href="#collapsePayment">
-        Payment Info
-      </a>
-    </div>
-    <div id="collapsePayment" class="collapse show" data-parent="#accordion">
-      <div class="card-body">
-       <div class="input-group">
-          <input type="text"  class="form-control mb-2" id="srcCntry" placeholder="Credit Card Number" name="Ex. 4111 1111 1111 1111 ">
-          <input type="text"  class="form-control mb-2" id="srcCntry" placeholder="Security Number" name="Ex. 436 ">
-          <input type="text"  class="form-control mb-2" id="srcCntry" placeholder="Expiration Date" name="Ex. 2020-1-25">
-        </div>
-      </div>
-    </div>
-  </div>
-   
-     <div class="card">
-    <div class="card-header">
-    <button id="payBtn" type="Pay" class="btn btn-primary mb-2"> Pay</button>  
-    </div>
-
-</div>
-
+</body>
