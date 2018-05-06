@@ -11,6 +11,7 @@ router.post('/', function (req, res, next) {
     var email = req.body.email;
     var password = req.body.password;
     var name;
+    var userID;
 
     console.log("Finding email: " + email + " password: " + password);
 
@@ -27,7 +28,10 @@ router.post('/', function (req, res, next) {
             userData = JSON.parse(userData);
            
             name = userData['FirstName'];
+            userID = userData['userID'];
+
             res.cookie('name', name);
+            res.cookie('userID', userID);
 
             res.status(200).send({ status: 'ok' });
 
