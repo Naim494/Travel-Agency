@@ -20,13 +20,13 @@ router.post('/', function (req, res, next) {
         password: password
         //password: password
     }).asCallback(function (err, users) {
-        if (!err) {
+        if (!err && (users[0] != undefined)) {
             console.log('FOUND USER');
             res.cookie('email', email);
 
             var userData = JSON.stringify(users[0]);
             userData = JSON.parse(userData);
-           
+
             name = userData['FirstName'];
             userID = userData['userID'];
 
@@ -37,8 +37,9 @@ router.post('/', function (req, res, next) {
 
         }
         else {
+            //console.log(err)
             console.log("USER DOES NOT EXIST");
-        
+            res.status(200).send({ status: 'error' });
         }
     })
 });

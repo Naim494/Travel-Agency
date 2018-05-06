@@ -24,13 +24,15 @@ router.post('/', function (req, res, next) {
         email: email,
         password: password
     })
-    .asCallback(function(err, res) {
+    .asCallback(function(err) {
         if (err) {
             console.log('ERROR!!')
             console.log(err);
+            res.status(200).send({ status: 'error' });
         }
         else {
             console.log('ADDED USER!')
+            res.status(200).send({ status: 'ok' });
         }
     })
 });

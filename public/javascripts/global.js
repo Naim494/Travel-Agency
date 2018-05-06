@@ -44,7 +44,7 @@ function addUser(event) {
 
 function logInUser(event) {
 
-    var email = $("#logInUsername").val();
+    var email = $("#logInEmail").val();
     var password = $("#logInPswd").val();
 
     var newLogin = {

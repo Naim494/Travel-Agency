@@ -3,7 +3,7 @@ var knex = require('knex')({
     connection: {
         host: 'localhost',
         user: 'root',
-        password: 'password',
+        password: 'Abstergos2!',
         database: 'travel_agency'
     },
     debug: true
@@ -54,9 +54,7 @@ function createAllTables() {
 
         .createTable('Car_rentals', function (table) {
             table.integer('VIN').primary().notNullable();
-            table.string('CarRent').notNullable();
             table.string('CarType').notNullable();
-            table.string('Address').notNullable();
             table.integer('price').notNullable();
         })
 
@@ -133,6 +131,13 @@ function createAllTables() {
             table.date('date').notNullable();
             table.time('time').notNullable();
             table.integer('groupID').references('Groups.groupID').notNullable();
+        })
+        
+        .createTable('TripsDetail', function (table) {
+            table.integer('userID').references('Users.userID').notNullable();
+            table.integer('tripDetailID').references('Trips.tripID').primary().notNullable();
+            table.string('sourceCity').notNullable();
+            table.string('destCity').notNullable();
         })
 
         .catch(function (e) {
