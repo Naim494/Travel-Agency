@@ -47,6 +47,8 @@ app.use('/addUser', addUserRouter);
 app.use('/login', loginRouter);
 app.use('/addReview', addReviewRouter);
 app.use('/getUserTrips', getUserTripsRouter);
+app.use('/admin', adminRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

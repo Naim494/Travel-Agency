@@ -1,0 +1,124 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/user.css" />
+
+    <script src="/javascripts/userJS.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="wrapper" class="animate">
+        <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+            <span class="navbar-toggler-icon leftmenutrigger"></span>
+            <a class="navbar-brand" href="#">Trippr</a>
+            <a id="welcomeMsg" class="navbar-item" style="color:white">Administrator</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav animate side-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Side Menu Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-md-auto d-md-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log out
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Top Menu Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        {{!-- Contain Div that holds All things --}}
+
+        <div class="container">
+            <div class="row">
+                {{!-- LEFT COLUMN --}}
+                <div class="col-md-6">
+
+                    {{!-- ADD TRIP JUMBOTRON --}}
+                    <div class="jumbotron jumbotron-fluid" style="background-color:#E8E56E" style="width:45%;">
+                        <div class="container">
+                            <h1 class="display-4">View Users</h1>
+
+                            {{!-- VIEW USER TABLE --}}
+                            <div class="UserTable">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">First Name</th>
+                                               <th scope="col">Last Name</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                {{!-- RIGHT COLUMNS --}}
+                <div class="col-md-6">
+
+                    {{!-- View Reviews JUMBOTRON --}}
+                    <div class="jumbotron jumbotron-fluid" style="background-color:#89ABBF" style="width:45%;">
+                        <div class="container">
+                            <h1 class="display-4">View Reviews</h1>
+
+                            {{!-- VIEW REVIEWS TABLE --}}
+                            <div class="ReviewTable">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">User Name</th>
+                                            <th scope="col">Review</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
