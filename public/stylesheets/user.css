@@ -99,3 +99,15 @@ display: none
 -ms-transition:all .3s ease-in-out;
 transition:all .3s ease-in-out
 }
+
+.topRight
+{
+  height: 400px;
+}
+
+.table
+{
+  background-color: white;
+  overflow: scroll;
+  /* height: 500px; */
+}

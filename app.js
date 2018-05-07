@@ -7,7 +7,7 @@ var hbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/user');
+var userRouter = require('./routes/user');
 
 var mysql = require('./mysql');
 
@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/', indexRouter);
-app.use('/user', usersRouter);
+app.use('/user', userRouter);
 
 // setup routes
 var addPaymentRouter = require('./routes/addPayment');
@@ -38,6 +38,7 @@ var loginRouter = require('./routes/login');
 var addUserRouter = require('./routes/addUser');
 var addReviewRouter = require('./routes/addReview');
 var getUserTripsRouter = require('./routes/getUserTrips');
+var adminRouter = require('./routes/admin');
 
 app.use('/addPayment', addPaymentRouter);
 app.use('/addTrip', addTripRouter);

@@ -4,8 +4,10 @@ var knex = require('../mysql');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.clearCookie('username');
-    res.render('main/landing', { title: 'logout' });
+    res.clearCookie('name');
+    res.clearCookie('email');
+    res.clearCookie('userID');
+    res.render('index');
   });
   
   router.post('/', function(req, res, next) {

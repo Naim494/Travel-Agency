@@ -13,30 +13,13 @@ $(document).ready(function () {
 
         username = data.name;
 
-        var heading = document.getElementById('welcomeHeader');
+        var heading = document.getElementById('welcomeMsg');
 
         heading.innerHTML = heading.textContent + " " + username;
 
     });
 
-    $.getJSON('/getUserTrips', function(data) {
-
-        // Stick our user data array into a userlist variable in the global object
-		userTripData = data;
-
-		// For each item in our JSON, add a table row and cells to the content string
-		$.each(data, function() {
-			tableContent += '<tr>';
-			tableContent += '<td><a href="#" class="linkdeleteuser" rel="' + this.tripID + '">' + this.tripID + '</td>';
-			tableContent += '<td>' + this.sourceCity + '</td>';
-			tableContent += '<td>' + this.destCity + '</td>';
-			tableContent += '</tr>';
-		});
-
-		// Inject the whole content string into our existing HTML table
-		$('#tableBody').html(tableContent);
-
-    });
+    populateTable();
 
 });
 
@@ -46,6 +29,32 @@ $( document ).ready(function() {
     e.preventDefault();
    });
 });
+
+// Fill table with data
+function populateTable() {
+
+	// Empty content string
+	var tableContent = '';
+
+    $.getJSON('/getUserTrips', function(data) {
+
+        // Stick our user data array into a userlist variable in the global object
+		userTripData = data;
+
+		// For each item in our JSON, add a table row and cells to the content string
+		$.each(data, function() {
+			tableContent += '<tr>';
+			tableContent += '<td>' + this.tripID + '</td>';
+			tableContent += '<td>' + this.source + '</td>';
+			tableContent += '<td>' + this.destination + '</td>';
+			tableContent += '</tr>';
+		});
+
+		// Inject the whole content string into our existing HTML table
+		$('#tableBody').html(tableContent);
+
+    });
+};
 
 function addTrip(event) {
 
