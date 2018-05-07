@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
             var tripJSON;
 
             if (!err) {
-                console.log()
+                
                 trips.forEach(trip => {
 
                     console.log(trip);
@@ -25,8 +25,6 @@ router.get('/', function (req, res, next) {
 
                     var from = x['sourceCity'];
                     var to = x['destCity'];
-
-                    //console.log('triID:' + x['tripDetailID']);
 
                     tripJSON = {
                         'tripID': x['tripDetailID'],
@@ -38,7 +36,6 @@ router.get('/', function (req, res, next) {
 
                 });
 
-                //console.log('TRIPS:' + trips);
                 res.status(200).json(processedTrips);
             }
             else {

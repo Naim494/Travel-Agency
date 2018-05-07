@@ -249,7 +249,7 @@ router.post('/', function (req, res, next) {
 
         knex('TripsDetail').insert({
             userID: req.cookies.userID,
-            tripDetailID: tripID,
+            tripDetailID: Math.floor(Math.random() * 99999),
             sourceCity: sourceCity,
             destCity: destCity
         })

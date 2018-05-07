@@ -42,7 +42,7 @@ function createAllTables() {
 
         .createTable('Flights', function (table) {
             table.integer('TKNumber').primary().notNullable();
-            table.integer('flightNumber').unique().notNullable();
+            table.integer('flightNumber').notNullable();
             table.string('Class').notNullable();
             table.integer('price').notNullable();
         })
@@ -90,6 +90,7 @@ function createAllTables() {
         .createTable('Reviews', function (table) {
             table.integer('reviewID').primary().notNullable();
             table.integer('userID').references('Users.userID').notNullable();
+            table.string('username').notNullable();
             table.string('reviewTxt').notNullable();
         })
 
@@ -129,7 +130,7 @@ function createAllTables() {
         
         .createTable('TripsDetail', function (table) {
             table.integer('userID').references('Users.userID').notNullable();
-            table.integer('tripDetailID').references('Trips.tripID').primary().notNullable();
+            table.integer('tripDetailID').primary().notNullable();
             table.string('sourceCity').notNullable();
             table.string('destCity').notNullable();
         })

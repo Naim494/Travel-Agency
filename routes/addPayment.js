@@ -5,20 +5,20 @@ var knex = require('../mysql');
 router.post('/', function (req, res, next) {
 
     var userID = req.cookies.userID;
-    var creditCardNumber = req.body.creditCardNumber;
-    var securityCode = req.body.securityCode;
-    var expirationDate = req.body.expirationDate;
+    var creditCardNumber = req.body.cardNum;
+    var securityCode = req.body.secNum;
+    var expirationDate = req.body.expDate;
  
     console.log('userID '  + userID);
     console.log('creditCardNumber '  + creditCardNumber);
     console.log('securityCode '  + securityCode);
     console.log('expirationDate '  + expirationDate);
  
-    knex('Payment').insert({
+    knex('Payments').insert({
         userID : userID,
         paymentID : Math.floor(Math.random() * 99999),
         cardNumber: creditCardNumber,
-        securityCode: securityCode,
+        securityNumber: securityCode,
         expDate: expirationDate,
     })
     .asCallback(function(err) {

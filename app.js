@@ -39,6 +39,7 @@ var addUserRouter = require('./routes/addUser');
 var addReviewRouter = require('./routes/addReview');
 var getUserTripsRouter = require('./routes/getUserTrips');
 var adminRouter = require('./routes/admin');
+var getReviewsRouter = require('./routes/getReviews');
 
 app.use('/addPayment', addPaymentRouter);
 app.use('/addTrip', addTripRouter);
@@ -48,6 +49,7 @@ app.use('/login', loginRouter);
 app.use('/addReview', addReviewRouter);
 app.use('/getUserTrips', getUserTripsRouter);
 app.use('/admin', adminRouter);
+app.use('/getReviews', getReviewsRouter);
 
 
 // catch 404 and forward to error handler
@@ -66,6 +68,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, () => console.log('Travel Agency listening on port 80!'))
+app.listen(80, () => console.log('Travel Agency listening on port 80!'))
 
 module.exports = app;
