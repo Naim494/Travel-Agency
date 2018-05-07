@@ -153,7 +153,9 @@ function addPayment(event) {
     var expDate = $("#expDate").val();
 
     var newPayment = {
-
+        'cardNum': creditCardNum,
+        'secNum': securityNum,
+        'expDate': expDate
     }
 
     $.ajax({
@@ -169,7 +171,18 @@ function addPayment(event) {
 
 function addReview(event) {
 
+    var reviewTxt = $("#reviewTxt").val();
 
-    
+    var newReview = {
+        'reviewTxt': reviewTxt
+    }
 
+    $.ajax({
+        type: 'POST',
+        data: newReview,
+        url: '/addReview',
+        dataType: 'JSON'
+    }).done(function (response) {
+
+    });
 }

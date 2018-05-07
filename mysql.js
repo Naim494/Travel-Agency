@@ -32,11 +32,6 @@ function createAllTables() {
         table.string('password').notNullable();
     })
 
-        .createTable('Passengers', function (table) {
-            table.integer('PassengerID').primary().unique().notNullable();
-            table.integer('userID').references('Users.userID');
-        })
-
         .createTable('Employees', function (table) {
             table.integer('employeeID').primary().unique().notNullable();
             table.integer('userID').references('Users.userID').notNullable();
@@ -93,10 +88,9 @@ function createAllTables() {
         })
 
         .createTable('Reviews', function (table) {
-            table.integer('passengerID').primary().references('Passengers.passengerID').notNullable();
-            table.integer('groupID').references('Groups.groupID');
-            table.string('detailedReview').notNullable();
-            table.integer('rating').notNullable();
+            table.integer('reviewID').primary().notNullable();
+            table.integer('userID').references('Users.userID').notNullable();
+            table.string('reviewTxt').notNullable();
         })
 
         .createTable('Sources', function (table) {
@@ -138,6 +132,14 @@ function createAllTables() {
             table.integer('tripDetailID').references('Trips.tripID').primary().notNullable();
             table.string('sourceCity').notNullable();
             table.string('destCity').notNullable();
+        })
+
+        .createTable('Payments', function (table) {
+            table.integer('userID').references('Users.userID').notNullable();
+            table.integer('paymentID').primary().notNullable();
+            table.integer('cardNumber').notNullable();
+            table.integer('securityNumber').notNullable();
+            table.date('expDate').notNullable();
         })
 
         .catch(function (e) {
