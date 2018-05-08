@@ -39,7 +39,14 @@ router.post('/', function (req, res, next) {
             res.cookie('name', name);
             res.cookie('userID', userID);
 
-            res.status(200).send({ status: 'ok' });
+            if (name === 'admin') {
+                res.status(200).send({ status: 'admin' });
+            }
+            else{
+                res.status(200).send({ status: 'ok' });
+            }
+
+            
 
         }
         else {

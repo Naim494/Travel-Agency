@@ -61,6 +61,9 @@ function logInUser(event) {
         if(response.status === 'ok'){
              $(location).attr('href', 'user');
         }
+        else if(response.status === 'admin') {
+            $(location).attr('href', 'admin');
+        }
         else {
 
         }
