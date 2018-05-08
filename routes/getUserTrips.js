@@ -1,3 +1,10 @@
+/**
+ * Route for User Trips
+ * 
+ * The user should be able to see what previous trips they have submitted 
+ */
+
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../mysql');

@@ -1,3 +1,13 @@
+/**
+ * Route for Trip
+ * 
+ * There are many fields for this route and as such there are error checking 
+ * in case the fields were left blank. For example, not every trip may take
+ * an airplane in which case, when the add trip button is placed, a empty string 
+ * should not be inserted into the flights table. This logic is used for all 
+ * tables in this route
+ */
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../mysql');

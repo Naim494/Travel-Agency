@@ -1,3 +1,11 @@
+/**
+ * Route for Payment
+ * 
+ * The UserID is stored as a cookie and the other fields are taken from the request
+ * 
+ * The fields are then inserted into the Payments table
+ */
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../mysql');
@@ -8,11 +16,6 @@ router.post('/', function (req, res, next) {
     var creditCardNumber = req.body.cardNum;
     var securityCode = req.body.secNum;
     var expirationDate = req.body.expDate;
- 
-    console.log('userID '  + userID);
-    console.log('creditCardNumber '  + creditCardNumber);
-    console.log('securityCode '  + securityCode);
-    console.log('expirationDate '  + expirationDate);
  
     knex('Payments').insert({
         userID : userID,

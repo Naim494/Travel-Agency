@@ -1,3 +1,9 @@
+/**
+ * Route for Login
+ * 
+ * This is used to validate a users login information
+ */
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../mysql');

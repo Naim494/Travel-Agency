@@ -1,3 +1,9 @@
+/**
+ * Route for Admin Page
+ * 
+ * The admin page has access to all data from the various users
+ */
+
 var express = require('express');
 var router = express.Router();
 

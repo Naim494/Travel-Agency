@@ -1,3 +1,9 @@
+/**
+ * Route for Reviews
+ * 
+ * The user should be able to see what previous reviews they have submitted 
+ */
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../mysql');

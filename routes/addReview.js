@@ -1,3 +1,11 @@
+/**
+ * Route for Review
+ * 
+ * The Username is stored as a cookie and the other fields are taken from the request
+ * 
+ * The fields are then inserted into the Reviews table
+ */
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../mysql');

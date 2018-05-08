@@ -1,3 +1,10 @@
+/**
+ * Route for User
+ * 
+ * The fields are used to create a user in the database. After this,
+ * it is inserted into the Users table
+ */
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../mysql');

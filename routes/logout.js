@@ -1,3 +1,9 @@
+/**
+ * Route for Logout
+ * 
+ * This route clears all the cookies stored 
+ */
+
 var express = require('express');
 var router = express.Router();
 var knex = require('../mysql');
